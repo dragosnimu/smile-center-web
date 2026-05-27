@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 10. SCROLL ENTRANCE ANIMATIONS (FADE-UP GENTLY)
-  const fadeElems = document.querySelectorAll('.service-card, .review-card, .gallery-item, .tech-card, .about-text, .about-photo-wrapper');
+  const fadeElems = document.querySelectorAll('.service-card, .review-card, .gallery-item, .tech-card, .about-text, .about-photo-wrapper, .visual-card, .braces-panel');
   
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -352,4 +352,45 @@ document.addEventListener('DOMContentLoaded', () => {
     el.classList.add('fade-in-ready');
     fadeObserver.observe(el);
   });
+
+  // 11. INTERACTIVE BRACES SELECTOR TABS
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const bracesPanels = document.querySelectorAll('.braces-panel');
+
+  if (tabButtons.length > 0 && bracesPanels.length > 0) {
+    // Set initial state for non-active panels in JavaScript to support transitions
+    bracesPanels.forEach(panel => {
+      if (!panel.classList.contains('active')) {
+        panel.style.display = 'none';
+      }
+    });
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+
+        // Update active button state
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Switch panels with smooth fade
+        bracesPanels.forEach(panel => {
+          if (panel.id === targetTab) {
+            panel.style.display = 'grid';
+            // Force browser reflow to trigger transition
+            panel.offsetHeight;
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+            // Hide after transition completes (400ms)
+            setTimeout(() => {
+              if (!panel.classList.contains('active')) {
+                panel.style.display = 'none';
+              }
+            }, 400);
+          }
+        });
+      });
+    });
+  }
 });

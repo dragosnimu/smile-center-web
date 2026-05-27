@@ -269,6 +269,180 @@
     </section>
 
     <!-- ==========================================================================
+         INTERACTIVE BRACES SELECTOR WIDGET
+         ========================================================================== -->
+    <section class="braces-selector ambient-glow-wrapper" id="braces-selector-section">
+      <!-- Ambient Orbs Background -->
+      <div class="ambient-orb orb-primary"></div>
+      <div class="ambient-orb orb-secondary"></div>
+      <div class="ambient-orb orb-accent"></div>
+      
+      <div class="container">
+        <div class="section-title-wrapper">
+          <span class="section-badge">Ghid Interactiv</span>
+          <h2 class="section-title">Alege Aparatul Potrivit</h2>
+          <p class="section-subtitle">Descoperă caracteristicile clinice ale celor mai populare sisteme ortodontice și alege-o pe cea care corespunde stilului tău de viață.</p>
+        </div>
+        
+        <div class="selector-widget">
+          <!-- Tabs Navigation -->
+          <div class="selector-tabs">
+            <button class="tab-btn active" data-tab="tab-clasic">
+              <i class="fas fa-cubes"></i> Clasic Metalic
+            </button>
+            <button class="tab-btn" data-tab="tab-safir">
+              <i class="fas fa-gem"></i> Safir Estetic
+            </button>
+            <button class="tab-btn" data-tab="tab-invisible">
+              <i class="fas fa-eye-slash"></i> Invizibil (Lingual)
+            </button>
+          </div>
+          
+          <!-- Panels Content Container -->
+          <div class="braces-panels-container">
+            
+            <!-- Panel 1: Clasic Metalic -->
+            <div class="braces-panel active" id="tab-clasic">
+              <div class="panel-content">
+                <h3>Aparat Fix Metalic</h3>
+                <p class="panel-subtitle">Performanță maximă, durabilitate dovedită</p>
+                <p class="panel-desc">
+                  Sistemul clasic din oțel inoxidabil este cel mai robust și eficient aparat din ortodonție. Ideal pentru corectarea oricărei anomalii severe de aliniere și ocluzie, fiind recomandat cu precădere copiilor și adolescenților datorită rezistenței sale crescute la uzură.
+                </p>
+                
+                <div class="metrics-grid">
+                  <div class="metric-item">
+                    <span class="metric-label">Durată tratament</span>
+                    <span class="metric-val"><i class="fas fa-clock"></i> 12 - 24 Luni</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Nivel vizibilitate</span>
+                    <span class="metric-val"><i class="fas fa-eye"></i> Vizibil (Clasic)</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Confort</span>
+                    <span class="metric-val"><i class="fas fa-tachometer-alt"></i> Mediu (Adaptare 1-2 săptămâni)</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Cost</span>
+                    <span class="metric-val"><i class="fas fa-tags"></i> Cel mai accesibil</span>
+                  </div>
+                </div>
+                
+                <a href="#contact-section" class="btn btn-primary">Solicită Consultație Clasic <i class="fas fa-arrow-right"></i></a>
+              </div>
+              
+              <div class="panel-visual">
+                <div class="visual-card">
+                  <!-- Custom SVG bracket drawing -->
+                  <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="25" y="25" width="100" height="100" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="4"/>
+                    <rect x="45" y="45" width="60" height="60" rx="8" fill="#cbd5e1" stroke="#475569" stroke-width="4"/>
+                    <line x1="25" y1="75" x2="125" y2="75" stroke="#475569" stroke-width="6"/>
+                    <rect x="55" y="55" width="15" height="15" fill="#ef4444"/>
+                    <rect x="80" y="55" width="15" height="15" fill="#ef4444"/>
+                  </svg>
+                  <p>Bracket Metalic Clasic</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Panel 2: Safir Estetic -->
+            <div class="braces-panel" id="tab-safir">
+              <div class="panel-content">
+                <h3>Aparat Estetic din Safir</h3>
+                <p class="panel-subtitle">Eleganță pură, transluciditate de cristal</p>
+                <p class="panel-desc">
+                  Realizat din safir monocristalin pur, acest aparat este aproape complet invizibil. Fiecare bracket se comportă ca o mică lentilă de cristal care reflectă culoarea naturală a dintelui dumneavoastră. Nu se colorează în timp și rezistă perfect la petele alimentare.
+                </p>
+                
+                <div class="metrics-grid">
+                  <div class="metric-item">
+                    <span class="metric-label">Durată tratament</span>
+                    <span class="metric-val"><i class="fas fa-clock"></i> 14 - 24 Luni</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Nivel vizibilitate</span>
+                    <span class="metric-val"><i class="fas fa-eye-slash"></i> Foarte redus (Translucid)</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Confort</span>
+                    <span class="metric-val"><i class="fas fa-tachometer-alt"></i> Ridicat (Bracket rotunjit)</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Rezistență culori</span>
+                    <span class="metric-val"><i class="fas fa-shield-alt"></i> Excelentă (Nu se pătează)</span>
+                  </div>
+                </div>
+                
+                <a href="#contact-section" class="btn btn-primary">Solicită Consultație Safir <i class="fas fa-arrow-right"></i></a>
+              </div>
+              
+              <div class="panel-visual">
+                <div class="visual-card">
+                  <!-- Custom SVG sapphire bracket drawing -->
+                  <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="25" y="25" width="100" height="100" rx="16" fill="rgba(14, 165, 233, 0.05)" stroke="rgba(14, 165, 233, 0.4)" stroke-width="4"/>
+                    <rect x="45" y="45" width="60" height="60" rx="8" fill="rgba(255, 255, 255, 0.8)" stroke="#38bdf8" stroke-width="3"/>
+                    <line x1="25" y1="75" x2="125" y2="75" stroke="#38bdf8" stroke-width="4" stroke-dasharray="2 2"/>
+                    <path d="M75 35 L 77 45 L 87 47 L 77 49 L 75 59 L 73 49 L 63 47 L 73 45 Z" fill="#eab308"/>
+                  </svg>
+                  <p>Bracket Cristal Safir</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Panel 3: Aparat Lingual (Invizibil) -->
+            <div class="braces-panel" id="tab-invisible">
+              <div class="panel-content">
+                <h3>Aparat Lingual (Incognito / 2D)</h3>
+                <p class="panel-subtitle">Tehnologie invizibilă, discreție absolută</p>
+                <p class="panel-desc">
+                  Sistemele linguale sunt montate exclusiv pe fața internă (dinspre limbă) a dinților, făcându-le 100% invizibile la exterior. Oferim sistemele premium personalizate **Incognito** (colaborare directă cu laboratoare din Germania), precum și cel mai confortabil sistem lingual existent, **2D Forestadent**.
+                </p>
+                
+                <div class="metrics-grid">
+                  <div class="metric-item">
+                    <span class="metric-label">Durată tratament</span>
+                    <span class="metric-val"><i class="fas fa-clock"></i> 10 - 20 Luni</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Nivel vizibilitate</span>
+                    <span class="metric-val"><i class="fas fa-eye-slash"></i> 100% Invizibil</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Confort</span>
+                    <span class="metric-val"><i class="fas fa-tachometer-alt"></i> Maxim (Tehnologie plată 2D)</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Personalizare</span>
+                    <span class="metric-val"><i class="fas fa-cogs"></i> Completă (turnat în aur)</span>
+                  </div>
+                </div>
+                
+                <a href="#contact-section" class="btn btn-primary">Solicită Consultație Linguală <i class="fas fa-arrow-right"></i></a>
+              </div>
+              
+              <div class="panel-visual">
+                <div class="visual-card">
+                  <!-- Custom SVG lingual bracket drawing -->
+                  <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="25" y="25" width="100" height="100" rx="16" fill="#fef08a" stroke="#ca8a04" stroke-width="4"/>
+                    <path d="M45 45 Q 75 75 105 45" stroke="#854d0e" stroke-width="6" fill="none"/>
+                    <circle cx="75" cy="65" r="15" fill="#ca8a04" stroke="#854d0e" stroke-width="3"/>
+                    <line x1="25" y1="90" x2="125" y2="90" stroke="#854d0e" stroke-width="4"/>
+                  </svg>
+                  <p>Bracket Lingual Aurit</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          WAITING ROOM & CLINIC ADVANTAGES (PHOTO 2)
          ========================================================================== -->
     <section class="capabilities" id="capabilities-section">

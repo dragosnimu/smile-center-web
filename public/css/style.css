@@ -2038,3 +2038,305 @@ footer {
     padding: 2rem;
   }
 }
+
+/* ==========================================================================
+   PREMIUM ADDITIONS: AMBIENT ORBS & INTERACTIVE BRACES SELECTOR
+   ========================================================================== */
+
+/* 1. Backdrop Glowing Ambient Orbs */
+.ambient-glow-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme="dark"] .ambient-orb {
+  opacity: 0.22;
+  filter: blur(160px);
+}
+
+.orb-primary {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+}
+
+.orb-secondary {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+  bottom: -15%;
+  right: -10%;
+}
+
+.orb-accent {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, hsl(174, 75%, 41%) 0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Ensure child elements are above the glowing background */
+.ambient-glow-wrapper .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* 2. Interactive Systems Selector (Braces Selector Widget) */
+.braces-selector {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-main) 100%);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.selector-widget {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Tab buttons bar */
+.selector-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  padding: 0.65rem;
+  border-radius: 50px;
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .selector-tabs {
+  background: var(--bg-surface);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.tab-btn i {
+  font-size: 1.15rem;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+  background-color: var(--border-color);
+}
+
+.tab-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 8px 20px var(--primary-glow);
+}
+
+/* Main presentation panel */
+.braces-panels-container {
+  position: relative;
+  min-height: 480px;
+}
+
+.braces-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4.5rem;
+  align-items: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 4.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.braces-panel.active {
+  display: grid;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.panel-content h3 {
+  font-size: 2.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.panel-subtitle {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.panel-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Feature grid metrics */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.metric-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.metric-val i {
+  color: var(--secondary);
+  margin-right: 0.25rem;
+}
+
+/* Visual graphics inside panel */
+.panel-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.visual-card {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  padding: 3rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.braces-panel:hover .visual-card {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg), var(--card-glow);
+}
+
+.visual-card p {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Card lift glowing shadows modifications */
+.service-card, .cap-detail-card, .review-card, .about-photo-card, .cap-image-card {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.4s ease, 
+              background-color 0.4s ease;
+}
+
+/* Beautiful custom button shimmer */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-25deg);
+  transition: none;
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  left: 150%;
+  transition: left 0.8s ease-in-out;
+}
+
+/* Responsive Rules for Selector Widget */
+@media (max-width: 900px) {
+  .braces-panel {
+    grid-template-columns: 1fr;
+    padding: 3rem;
+    gap: 3rem;
+  }
+  
+  .panel-visual {
+    order: -1;
+  }
+  
+  .selector-tabs {
+    flex-wrap: wrap;
+    border-radius: var(--radius-md);
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .tab-btn {
+    flex: 0 0 calc(50% - 0.5rem);
+    border-radius: var(--radius-sm);
+  }
+}
+
+@media (max-width: 600px) {
+  .tab-btn {
+    flex: 0 0 100%;
+  }
+  
+  .braces-panel {
+    padding: 2rem;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
